@@ -9,12 +9,15 @@ def score_words():
     return get_words_score(words)
     
 def count_vowels(word):
-    vowels = ["a", "e", "i", "o", "u"]
+    vowels = ["a", "e", "i", "o", "u", "y"]
     vowel_counter = 0
     for character in word:
         if character in vowels:
-          vowel_counter += 1
-        
+          vowel_counter += 1        
+    #print(f"{word} has {vowel_counter} vowels and {vowel_scorer(vowel_counter)} score for it")
+    return vowel_scorer(vowel_counter)
+    
+def vowel_scorer(vowel_counter):
     if vowel_counter % 2 == 0:
         return 2
     else:
