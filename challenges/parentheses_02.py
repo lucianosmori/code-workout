@@ -1,35 +1,21 @@
 class Solution:
     def isValid(self, word: str) -> bool:
-        open_parentheses = [ '(', '{', '['] 
-        closed_parentheses= [ ')', '}', ']']
-        
-        try:
-            for index, character in enumerate(word):
-                if character in open_parentheses:
-                    assert word[index + 1] == self.get_next_ascii(character)
-                    continue
-                elif character in closed_parentheses:
-                    assert word[index - 1] == self.get_prior_ascii(character)
-                    continue
-                else:
+        stack = []  # Use a stack to keep track of open parentheses
+
+        mapping = {')': '(', '}': '{', ']': '['}  # Define a mapping of closing to opening parentheses
+
+        for character in word:
+            if character in mapping:  # If the character is a closing parenthesis
+                top_element = stack.pop() if stack else '#'  # Pop the top element from the stack or use '#' if the stack is empty
+                if mapping[character] != top_element:
                     return False
-                                
-            return True
-        
-        except Exception:
-            return False
+            else:
+                stack.append(character)  # If it's an opening parenthesis, push it onto the stack
 
-    def get_next_ascii(self, x):
-        ascii = ord(x)
-        next_char = chr(ascii + 2) if x != "(" else chr(ascii + 1)
-        return next_char
-
-    def get_prior_ascii(self, x):
-        ascii = ord(x)
-        prior_char = chr(ascii - 2) if x != ")" else chr(ascii - 1)
-        return prior_char
+        return not stack  # If the stack is empty at the end, the string is valid
 
 if __name__ == "__main__":
-    string = input("")
+    # string = input("")
+    string = "(]"
     s = Solution()
     print(s.isValid(string))
