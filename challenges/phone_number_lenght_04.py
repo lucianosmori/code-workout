@@ -1,7 +1,7 @@
 class Solution:
     def main(self, numbers=list[int]):
         for number in numbers:
-            print(self.validate_numbers(number))
+            return(self.validate_numbers(number))
         
 
     def validate_numbers(self, number) -> str:
@@ -30,5 +30,6 @@ class Solution:
 if __name__ == "__main__":    
     x = list(map(int, input("Enter multiple values: ").split()))
     #x = ["8F54698745", 8991231235, 9991231235, 1991231235]
+    #x = ["8991231235"]
     s = Solution()
-    s.main(x)
+    print(s.main(x))
