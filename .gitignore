@@ -1,3 +1,4 @@
 # Distribution / packaging
 *.pyc
 *.egg-info
+.vscode/settings.json
