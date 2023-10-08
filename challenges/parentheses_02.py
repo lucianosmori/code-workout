@@ -15,7 +15,6 @@ class Solution:
         return not stack  # If the stack is empty at the end, the string is valid
 
 if __name__ == "__main__":
-    # string = input("")
-    string = "(]"
+    string = input("")
     s = Solution()
     print(s.isValid(string))
