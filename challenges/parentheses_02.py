@@ -16,5 +16,6 @@ class Solution:
 
 if __name__ == "__main__":
     string = input("")
+    #string = "(]"
     s = Solution()
     print(s.isValid(string))
