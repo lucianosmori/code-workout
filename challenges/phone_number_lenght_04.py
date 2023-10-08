@@ -1,5 +1,5 @@
 class Solution:
-    def main(self, numbers=list[int]):
+    def main(self, numbers):
         for number in numbers:
             return(self.validate_numbers(number))
         
