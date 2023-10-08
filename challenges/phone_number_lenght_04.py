@@ -4,16 +4,16 @@ class Solution:
             print(self.validate_numbers(number))
         
 
-    def validate_numbers(self, number):
+    def validate_numbers(self, number) -> str:
         if self.validate_number_lenght(number) and self.starts_with(number):
             return "YES"
         else:
             return "NO"
 
-    def validate_number_lenght(self, number) :
+    def validate_number_lenght(self, number=int) -> bool:
         return True if len(str(number)) == 10 else False
     
-    def starts_with(self, number) :
+    def starts_with(self, number=int) -> bool:
         legit_numbers = [7,8,9]
         try:
             number = [int(x) for x in str(number)] # map(int, str(num))
