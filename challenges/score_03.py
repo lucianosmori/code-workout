@@ -1,5 +1,6 @@
 class Solution:
     def get_runner_score(self, scores: list[int]) -> int:
+        scores = list(set(scores))        
         scores.sort()
         return scores[-2]
 
